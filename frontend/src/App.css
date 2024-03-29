@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.App {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+  }
+  
+  table {
+    margin-bottom: 10px; /* Add margin at the bottom to create space between the table and the form */
+    /* Add any other table styling you need */
+    border-collapse: collapse;
+  }
+
+  
+  td,th {
+    border: 1px solid #000; /* Add border to each cell */
+    padding: 8px; /* Add padding to improve readability */
+  }
+
+
