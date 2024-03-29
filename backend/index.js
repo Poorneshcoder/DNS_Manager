@@ -40,6 +40,10 @@ app.put("/datas/:id", datasController.updateData)
 
 app.delete("/datas/:id", datasController.deleteData );
 
+app.get('/',(req,res)=>{
+    res.send("backend started");
+})
+
 
 
 app.listen(3030,()=>{
