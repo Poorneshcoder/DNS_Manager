@@ -146,16 +146,21 @@ const Account = () => {
    return (
     <div className="App">
 
-  <form onSubmit={handleSubmit} style={{display: "flex", justifyContent: "space-evenly"}} >
+  <form 
+    class="border border-gray-300 focus:border-blue-500 px-4 py-2 my-2" 
+    onSubmit={handleSubmit} 
+     >
         <input
-            className='form-control'
-            type='text'
-            value={search}
-            onChange={(e)=>setSearch(e.target.value)}
-            placeholder='Search by Domain name, Record Type and IP Address....'
+          class="border border-gray-300 focus:border-blue-500 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-200"
+          type='text'
+          value={search}
+          onChange={(e)=>setSearch(e.target.value)}
+          placeholder='Search by Domain name, Record Type and IP Address....'
           />
 
-          <button type='submit'  >Submit</button>
+          <button
+          class="border border-gray-300 px-4 py-2 mx-2 rounded-md bg-[#1a1a1a]/90 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-200"
+           type='submit'  >Submit</button>
   </form>
 
 
@@ -176,8 +181,13 @@ const Account = () => {
               {data && data.domain && <td>{data.domain}</td>}
               {data && data.recordType && <td>{data.recordType}</td>}
               {data && data.ipAddress && <td>{data.ipAddress}</td>}
-              <td><button onClick={()=>toggleUpdate(data)} >update</button></td>
-              <td><button onClick={()=>deleteData(data._id)} >delete</button></td>
+              <td><button
+              class="border border-gray-300 px-4 py-2 rounded-md bg-[#1a1a1a]/90 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-200"
+              onClick={()=>toggleUpdate(data)} >update</button></td>
+
+              <td><button 
+              class="border border-gray-300 px-4 py-2 rounded-md bg-[#1a1a1a]/90 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-200"
+              onClick={()=>deleteData(data._id)} >delete</button></td>
             </tr>
           ))}
         </tbody>
@@ -187,6 +197,7 @@ const Account = () => {
         <h3>update data</h3>
         <form onSubmit={updateFormData} >
           <input
+          class="border border-gray-300 focus:border-blue-500 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-200"
           onChange={handleUpdateFieldChange}
           value={updateData.domain}
           name="domain"
@@ -194,6 +205,7 @@ const Account = () => {
           placeholder="Domain Name"
           />
           <input
+          class="border border-gray-300 focus:border-blue-500 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-200"
           onChange={handleUpdateFieldChange}
           value={updateData.recordType}
           name="recordType"
@@ -201,20 +213,24 @@ const Account = () => {
           placeholder="Record Type"
           />
           <input
+          class="border border-gray-300 focus:border-blue-500 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-200"
           onChange={handleUpdateFieldChange}
           value={updateData.ipAddress}
           name="ipAddress"
           type="text"
           placeholder="IP Address"
           />
-          <button type="submit" >Update</button>
+          <button
+          class="border border-gray-300 px-4 py-2 rounded-md bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-200"
+          type="submit" >Update</button>
         </form>
       </div>}
 
      {!updateData._id && <div>
-        <h3>Domains list</h3>
-        <form onSubmit={createDataField}>
-          <input
+        <h3>Add Domain</h3>
+        <form className='my-2' onSubmit={createDataField}>
+          <input 
+          class="border border-gray-300 focus:border-blue-500 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-200"
           onChange={updateCreateDataField}
           value={createData.domain}
           name="domain"
@@ -222,6 +238,7 @@ const Account = () => {
           placeholder="Domain Name"
           />
           <input
+          class="border border-gray-300 focus:border-blue-500 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-200"
           onChange={updateCreateDataField}
           value={createData.recordType}
           name="recordType"
@@ -229,13 +246,16 @@ const Account = () => {
           placeholder="Record Type"
           />
           <input
+          class="border border-gray-300 focus:border-blue-500 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-200"
           onChange={updateCreateDataField}
           value={createData.ipAddress}
           name="ipAddress"
           type="text"
           placeholder="IP Address"
           />
-          <button type="submit" >Add</button>
+          <button
+          class="border border-gray-300 px-4 py-2 mx-2 rounded-md bg-[#1a1a1a]/90 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-200"
+          type="submit" >Add</button>
         </form>
       </div> }
 
