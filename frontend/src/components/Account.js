@@ -70,6 +70,7 @@ const Account = () => {
         setFilterData([...datas, response.data.data]);
         // Clear data fields
         setCreateData({ domain: "", recordType: "", ipAddress: "" });
+        alert("Data Created Successfully");
       } catch (error) {
         console.error("Error creating data:", error);
       }
@@ -89,6 +90,7 @@ const Account = () => {
       // console.log(data)
       // set the update data
       setUpdateData({_id: data._id,domain: data.domain, recordType: data.recordType, ipAddress:data.ipAddress});
+
     }
   
   
@@ -97,6 +99,7 @@ const Account = () => {
         await axios.delete(`/datas/${_id}`);
         // Fetch the latest data from the server
         fetchDatas();
+        alert("Deleted Successfully");
       } catch (error) {
         console.error("Error deleting data:", error);
       }
@@ -106,7 +109,7 @@ const Account = () => {
       e.preventDefault();
       const { domain, recordType, ipAddress } = updateData;
       try {
-        const response = await axios.put(`/datas/${updateData._id}`, {
+         await axios.put(`/datas/${updateData._id}`, {
           domain,
           recordType,
           ipAddress,
@@ -114,6 +117,7 @@ const Account = () => {
         // Fetch the latest data from the server
         fetchDatas();
         setUpdateData({ _id: null, domain: "", recordType: "", ipAddress: "" });
+        alert("Update Successfully");
       } catch (error) {
         console.error("Error updating data:", error);
       }
@@ -163,8 +167,6 @@ const Account = () => {
            type='submit'  >Submit</button>
   </form>
 
-
-
       {datas.length > 0 && <table>
         <thead>
           <tr>
@@ -176,6 +178,7 @@ const Account = () => {
           </tr>
         </thead>
         <tbody>
+          
           {filterData.map((data, index) => (
             <tr key={index}>
               {data && data.domain && <td>{data.domain}</td>}
