@@ -45,7 +45,9 @@ const SignUp = () => {
 
   return (
     <div className='w-full h-screen flex' >
-      <div className='w-[50%] h-[100%] bg-[#1a1a1a] text-white flex justify-center items-center' >
+       
+      <div className='w-[100%] h-[100%] bg-[#1a1a1a] text-white flex justify-center items-center' >
+      
         <form className='text-center border rounded-lg w-[600px] h-[400px] p-9'
         onSubmit={handleRegister}
         >
@@ -75,9 +77,6 @@ const SignUp = () => {
             >Sign Up</button>
         </form>
       </div>
-      <div className='w-[50%] h-[100%] flex justify-center items-center bg-teal-800' >
-      <h2 className='text-3xl text-white' >Sign Up</h2>
-    </div>
     </div>
   )
 }
